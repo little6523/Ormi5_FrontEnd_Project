@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HODU 랜딩페이지</title>
+    <link rel="stylesheet" href="Front_End_Project.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="Front_End_Project_이현준.html" class="nav-logo"></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Support</a></li>
+                <li><button class="button" href="#">Download</button></li>
+            </ul>
+        </nav>
+        <div class="header-intro">
+            <div class="header-text-box-1">
+                Lorem Ipsum is simply<br> dummy text of the printing and
+            </div>
+            <div class="header-text-box-2">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+            </div>
+            <button class="button" href="#">Download</button>
+            <img class="Header_Cat" src="img/Header_Cat.png">
+        </div>
+    </header>
+    <div class="content-wrapper">
+        <main>
+            <section class="Main1">
+                <img class="Main_Cat1" src="img/Main_Cat1.png">
+                <div>
+                    <div class="Main1-text-box-1">
+                        Lorem Ipsum is simply<br> dummy text of the printing<br> and dummy text
+                    </div>
+                    <div class="Main1-text-box-2">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting<br>industry.
+                    </div>
+                </div>
+            </section>
+            <section class="Main2">
+                <span><h1>dummy text of the printing and dummy</h1></span>
+                <div>Lorem Ipsum is simply
+                <span class="D97652"> dummy text</span>
+                of the printing and typesetting industry.<br>
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                </div>
+                <div class="Main2-Pictures-Grid">
+                    <img class="Main2-Pictures" src="img/Main_Cat2.png">
+                    <img class="Main2-Pictures" src="img/Main_Cat3.png">
+                    <img class="Main2-Pictures" src="img/Main_Cat4.png">
+                    <img class="Main2-Pictures" src="img/Main_Cat5.png">
+                    <img class="Main2-Pictures" src="img/Main_Cat6.png">
+                    <img class="Main2-Pictures" src="img/Main_Cat7.png">
+                </div>
+                <div class="Main2-Continue-Text"><b>Continue exploring HODU</b></div>
+                <button id="showMore" class="button">Show more</button>
+            </section>
+            <div class="hr"><hr></div>
+            <section class="Main3">
+                <h1 class="Main3-Map-Text">Where you'll be</h1>
+                <div class="Main3-Map-Position">330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</div>
+                <div id="Main3-Map-MapFrame" style="width:1430px;height:400px;></div>
+<!--                <iframe class="Main3-Map-MapFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.2669553615565!2d126.56887987618565!3d33.44235084968719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350cfdb22ad3cce3%3A0x1321aebb880d1b1!2z7KCc7KO87Yq567OE7J6Q7LmY64-EIOygnOyjvOyLnCDssqjri6jroZwgMzMw!5e0!3m2!1sko!2skr!4v1716190667764!5m2!1sko!2skr" width="1430" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+            </section>
+            <section class="Main4">
+                <div class="Main4-Subscribe-Box">
+                    <div class="Main4-Subscribe-Text1">Subscribe to our Blog post</div>
+                    <div class="Main4-Subscribe-Text2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
+                        Lorem Ipsum has been the industry's standard dummy text
+                    </div>
+                    <div class="Main4-Subscribe-Input">
+                        <input class="Main4-Subscribe-TextBox" type="text" placeholder="Enter your e-mail address">
+                        <button id="subscribe" class="button">Subscribe</button>
+                        <div class="modal">
+                            <div><img class="Modal_Cat" src="img/Modal_Cat.png"></div>
+                            <h1>Thank you!</h1>
+                            <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+                            <button id="Modal_OK" class="button">OK! I Love HODU</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="Main4-Subscribe-Background">
+            <a href="#" class="ScrollTopBtn"></a>
+        </div>
+    </div>
+    <footer>
+        <a href="Front_End_Project_이현준.html" class="nav-logo"></a>
+        <nav class="Footer-Nav">
+            <ul>
+                <li><a href="#"><img src="img/Blog.png" class="Footer-Nav-Logo"></a></li>
+                <li><a href="#"><img src="img/Instargram.png" class="Footer-Nav-Logo"></a></li>
+                <li><a href="#"><img src="img/Facebook.png" class="Footer-Nav-Logo"></a></li>
+                <li><a href="#"><img src="img/YouTube.png" class="Footer-Nav-Logo"></a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="Front_End_Project.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d27e9a7bf10bfffe5cd1f18dd2e713b3"></script>
+    <script type="text/javascript">
+        let container = document.getElementById('Main3-Map-MapFrame'); //지도를 담을 영역의 DOM 레퍼런스
+        let options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(33.44226384332738, 126.57126200460212), //지도의 중심좌표.
+            level: 3 //지도의 레벨(확대, 축소 정도)
+        };
+
+        let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+    </script>
+</body>
+</html>
