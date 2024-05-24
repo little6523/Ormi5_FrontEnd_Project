@@ -1,41 +1,25 @@
 const showMore = document.querySelector('#showMore');
 const picturesGrid = document.querySelector('.Main2-Pictures-Grid');
 
-// showMore.addEventListener('click', function () {
-//     fetch("https://picsum.photos/v2/list?page=2&limit=100")
-//         .then((response) => response.json())
-//         .then((data) => {
-//             for (let i = 0; i < 3; i++) {
-//                 let randomNumber = Math.floor(Math.random() * 100);
-//                 let imageUrl = data[randomNumber]['download_url'];
-//                 let newImg = document.createElement('img');
-//                 newImg.classList.add("Main2-Pictures");
-//                 newImg.setAttribute("src", imageUrl);
-//                 picturesGrid.appendChild(newImg);
-//             }
-//         });
-// })
+showMore.addEventListener('click', getImages);
 
-showMore.addEventListener('click', function (){
+function getImages(){
+    let randomPage = Math.floor(Math.random() * 10);
+
     $.ajax({
-        url: "https://picsum.photos/v2/list?page=2&limit=100",
+        url: `https://picsum.photos/v2/list?page=${randomPage}&limit=6`,
         type: "get",
         datatype: "json",
-        success: function (data) {
-            for (let i = 0; i < 6; i++) {
-                let randomNumber = Math.floor(Math.random() * 100);
-                let imageUrl = data[randomNumber]['download_url'];
-                let newImg = document.createElement('img');
-                newImg.classList.add("Main2-Pictures");
-                newImg.setAttribute("src", imageUrl);
-                picturesGrid.appendChild(newImg);
-            }
+        success: function (images) {
+            images.forEach((image)=>{
+                picturesGrid.insertAdjacentHTML('beforeend', `<img class="Main2-Pictures" src="${image.download_url}">`)
+            });
         },
         error: function (){
             alert('error');
         }
     })
-})
+}
 
 const subscribe = document.querySelector('#subscribe');
 const modal = document.querySelector('.modal')
@@ -50,3 +34,4 @@ modalOK.addEventListener('click', function () {
     console.log("모달창닫기");
     modal.style.visibility = 'hidden';
 })
+
