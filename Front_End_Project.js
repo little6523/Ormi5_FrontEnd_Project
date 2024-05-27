@@ -10,9 +10,10 @@ function getImages(){
         url: `https://picsum.photos/v2/list?page=${randomPage}&limit=6`,
         type: "get",
         datatype: "json",
+        async: true,
         success: function (images) {
             images.forEach((image)=>{
-                picturesGrid.insertAdjacentHTML('beforeend', `<img class="Main2-Pictures" src="${image.download_url}">`)
+                picturesGrid.insertAdjacentHTML('beforeend', `<img class="Main2-Pictures" src="${image.download_url}">  alt=""`)
             });
         },
         error: function (){
