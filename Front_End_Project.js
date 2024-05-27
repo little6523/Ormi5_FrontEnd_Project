@@ -13,7 +13,7 @@ function getImages(){
         async: true,
         success: function (images) {
             images.forEach((image)=>{
-                picturesGrid.insertAdjacentHTML('beforeend', `<img class="Main2-Pictures" src="${image.download_url}">  alt=""`)
+                picturesGrid.insertAdjacentHTML('beforeend', `<img class="Main2-Pictures" src="${image.download_url}" alt="">`)
             });
         },
         error: function (){
